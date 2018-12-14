@@ -41,6 +41,7 @@ public class FavoriteFragment extends Fragment {
     static ArrayList<String> questionList = new ArrayList<String>();
     static ArrayList<String> ImgList = new ArrayList<String>();
     static ArrayList<String> IDList = new ArrayList<String>();
+    static ArrayList<String> fav_IDList = new ArrayList<String>();
     static ArrayList<List<String>> allanswerList = new ArrayList<List<String>>();
     static ArrayList<String>  answerList ;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -116,7 +117,7 @@ public class FavoriteFragment extends Fragment {
                     intent.putExtra("question_list",fav_questionList);
                     ArrayList ans = (ArrayList) fav_answerList.get(index);
                     intent.putExtra("answers",ans);
-                    intent.putExtra("id_que",IDList);
+                    intent.putExtra("id_que",fav_IDList);
                     startActivity(intent);
                     Log.d("indK", String.valueOf(index));
                 }
@@ -203,7 +204,7 @@ public class FavoriteFragment extends Fragment {
         fav_questionList.clear();
         fav_answerList.clear();
         fav_ImgList.clear();
-
+        fav_IDList.clear();
         Log.d("FINDJa1", String.valueOf(fav_questionList.size()));
        for(int i=0;i<IDList.size();i++){
            for(int j=0;j<favlist.size();j++){
@@ -211,6 +212,7 @@ public class FavoriteFragment extends Fragment {
                    fav_questionList.add(questionList.get(i));
                    fav_answerList.add(allanswerList.get(i));
                    fav_ImgList.add(ImgList.get(i));
+                   fav_IDList.add(IDList.get(i));
                }
            }
        }
