@@ -65,12 +65,6 @@ public class FavoriteFragment extends Fragment {
         getFAV();
         recyclerView = (RecyclerView) view.findViewById(R.id.fav_list);
 
-        ((MainActivity) getActivity())
-                .setActionBarTitle("คำถามที่พบบ่อยในช่วงนี้");
-
-
-
-
         return view;
     }
 
